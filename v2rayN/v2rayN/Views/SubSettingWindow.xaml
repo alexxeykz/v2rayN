@@ -40,6 +40,16 @@
                         </StackPanel>
                     </Button>
                     <Separator />
+                    <Button x:Name="menuSubAddFromClipboard">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon
+                                Margin="{StaticResource MarginRight8}"
+                                VerticalAlignment="Center"
+                                Kind="ContentPaste" />
+                            <TextBlock Style="{StaticResource ToolbarTextBlock}" Text="{x:Static resx:ResUI.menuSubAddFromClipboard}" />
+                        </StackPanel>
+                    </Button>
+                    <Separator />
                     <Button x:Name="menuSubDelete">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon

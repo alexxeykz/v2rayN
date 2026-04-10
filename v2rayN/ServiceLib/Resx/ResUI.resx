@@ -546,6 +546,9 @@
   <data name="menuSubAdd" xml:space="preserve">
     <value>Add</value>
   </data>
+  <data name="menuSubAddFromClipboard" xml:space="preserve">
+    <value>Paste URL</value>
+  </data>
   <data name="menuSubDelete" xml:space="preserve">
     <value>Delete</value>
   </data>

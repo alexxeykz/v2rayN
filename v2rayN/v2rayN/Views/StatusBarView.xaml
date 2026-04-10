@@ -20,6 +20,14 @@
             Margin="{StaticResource Margin4}"
             Mode="Standard">
             <DockPanel>
+                <Ellipse
+                    x:Name="ellipseRunning"
+                    Width="12"
+                    Height="12"
+                    Margin="6,0,4,0"
+                    VerticalAlignment="Center"
+                    DockPanel.Dock="Left"
+                    ToolTip="Connection status" />
                 <StackPanel
                     Margin="{StaticResource MarginLeftRight8}"
                     VerticalAlignment="Center"

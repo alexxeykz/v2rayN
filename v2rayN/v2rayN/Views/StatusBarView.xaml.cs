@@ -50,6 +50,10 @@ public partial class StatusBarView
             this.OneWayBind(ViewModel, vm => vm.RunningServerToolTipText, v => v.tbNotify.ToolTipText).DisposeWith(disposables);
             this.OneWayBind(ViewModel, vm => vm.NotifyLeftClickCmd, v => v.tbNotify.LeftClickCommand).DisposeWith(disposables);
 
+            //running indicator
+            this.OneWayBind(ViewModel, vm => vm.IsRunning, v => v.ellipseRunning.Fill,
+                isRunning => new SolidColorBrush(isRunning ? Colors.LimeGreen : Colors.Gray)).DisposeWith(disposables);
+
             //status bar
             this.OneWayBind(ViewModel, vm => vm.InboundDisplay, v => v.txtInboundDisplay.Text).DisposeWith(disposables);
             this.OneWayBind(ViewModel, vm => vm.InboundLanDisplay, v => v.txtInboundLanDisplay.Text).DisposeWith(disposables);

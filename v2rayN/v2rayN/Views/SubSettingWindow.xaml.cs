@@ -22,6 +22,7 @@ public partial class SubSettingWindow
             this.Bind(ViewModel, vm => vm.SelectedSource, v => v.lstSubscription.SelectedItem).DisposeWith(disposables);
 
             this.BindCommand(ViewModel, vm => vm.SubAddCmd, v => v.menuSubAdd).DisposeWith(disposables);
+            this.BindCommand(ViewModel, vm => vm.SubAddFromClipboardCmd, v => v.menuSubAddFromClipboard).DisposeWith(disposables);
             this.BindCommand(ViewModel, vm => vm.SubDeleteCmd, v => v.menuSubDelete).DisposeWith(disposables);
             this.BindCommand(ViewModel, vm => vm.SubEditCmd, v => v.menuSubEdit).DisposeWith(disposables);
             this.BindCommand(ViewModel, vm => vm.SubShareCmd, v => v.menuSubShare).DisposeWith(disposables);
@@ -48,6 +49,13 @@ public partial class SubSettingWindow
                     return false;
                 }
                 break;
+
+            case EViewAction.SubAddFromClipboard:
+            {
+                var url = WindowsUtils.GetClipboardData()?.Trim() ?? string.Empty;
+                var item = new SubItem { Url = url };
+                return new SubEditWindow(item).ShowDialog() ?? false;
+            }
 
             case EViewAction.SubEditWindow:
                 if (obj is null)

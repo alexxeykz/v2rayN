@@ -10,6 +10,7 @@ public class SubSettingViewModel : MyReactiveObject
     public IList<SubItem> SelectedSources { get; set; }
 
     public ReactiveCommand<Unit, Unit> SubAddCmd { get; }
+    public ReactiveCommand<Unit, Unit> SubAddFromClipboardCmd { get; }
     public ReactiveCommand<Unit, Unit> SubDeleteCmd { get; }
     public ReactiveCommand<Unit, Unit> SubEditCmd { get; }
     public ReactiveCommand<Unit, Unit> SubShareCmd { get; }
@@ -27,6 +28,10 @@ public class SubSettingViewModel : MyReactiveObject
         SubAddCmd = ReactiveCommand.CreateFromTask(async () =>
         {
             await EditSubAsync(true);
+        });
+        SubAddFromClipboardCmd = ReactiveCommand.CreateFromTask(async () =>
+        {
+            await AddSubFromClipboardAsync();
         });
         SubDeleteCmd = ReactiveCommand.CreateFromTask(async () =>
         {
@@ -55,6 +60,15 @@ public class SubSettingViewModel : MyReactiveObject
     {
         SubItems.Clear();
         SubItems.AddRange(await AppManager.Instance.SubItems());
+    }
+
+    private async Task AddSubFromClipboardAsync()
+    {
+        if (await _updateView?.Invoke(EViewAction.SubAddFromClipboard, null) == true)
+        {
+            await RefreshSubItems();
+            IsModified = true;
+        }
     }
 
     public async Task EditSubAsync(bool blNew)

@@ -90,6 +90,9 @@ public class StatusBarViewModel : MyReactiveObject
     [Reactive]
     public bool BlIsNonWindows { get; set; }
 
+    [Reactive]
+    public bool IsRunning { get; set; }
+
     #endregion UI
 
     public StatusBarViewModel(Func<EViewAction, object?, Task<bool>>? updateView)
@@ -285,6 +288,7 @@ public class StatusBarViewModel : MyReactiveObject
 
     private async Task RefreshServersBiz()
     {
+        IsRunning = (int)AppManager.Instance.RunningCoreType > 0;
         await RefreshServersMenu();
 
         //display running server

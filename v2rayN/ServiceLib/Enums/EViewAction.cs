@@ -30,6 +30,7 @@ public enum EViewAction
     FullConfigTemplateWindow,
     GlobalHotkeySettingWindow,
     SubSettingWindow,
+    SubAddFromClipboard,
     DispatcherRefreshServersBiz,
     DispatcherRefreshIcon,
     DispatcherShowMsg,
