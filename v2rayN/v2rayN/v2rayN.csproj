@@ -5,7 +5,7 @@
 		<TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
 		<GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
 		<UseWPF>true</UseWPF>
-		<ApplicationIcon>Resources\v2rayN.ico</ApplicationIcon>
+		<ApplicationIcon>Resources\Stoun.ico</ApplicationIcon>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -22,14 +22,14 @@
 
 	<ItemGroup>
 		<AdditionalFiles Include="app.manifest" />
-		<EmbeddedResource Include="Resources\v2rayN.ico">
+		<EmbeddedResource Include="Resources\Stoun.ico">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</EmbeddedResource>
 		<Resource Include="Resources\NotifyIcon1.ico" />
 		<Resource Include="Resources\NotifyIcon2.ico" />
 		<Resource Include="Resources\NotifyIcon3.ico" />
 		<Resource Include="Resources\NotifyIcon4.ico" />
-		<Resource Include="Resources\v2rayN.ico" />
+		<Resource Include="Resources\Stoun.ico" />
 	</ItemGroup>
 
 	<ItemGroup>
