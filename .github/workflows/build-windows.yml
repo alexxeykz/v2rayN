@@ -35,18 +35,16 @@ jobs:
 
     - name: Build
       run: |
-        cd v2rayN 
-        dotnet publish ./v2rayN/v2rayN.csproj     -c Release -r win-x64   -p:SelfContained=true -p:EnableWindowsTargeting=true -o $OutputPath64
-        dotnet publish ./v2rayN/v2rayN.csproj     -c Release -r win-arm64 -p:SelfContained=true -p:EnableWindowsTargeting=true -o $OutputPathArm64
-        dotnet publish ./AmazTool/AmazTool.csproj -c Release -r win-x64   -p:SelfContained=true -p:EnableWindowsTargeting=true -p:PublishTrimmed=true -o $OutputPath64
-        dotnet publish ./AmazTool/AmazTool.csproj -c Release -r win-arm64 -p:SelfContained=true -p:EnableWindowsTargeting=true -p:PublishTrimmed=true -o $OutputPathArm64
+        cd v2rayN
+        dotnet publish ./v2rayN/v2rayN.csproj     -c Release -r win-x64 -p:SelfContained=true -p:EnableWindowsTargeting=true -o $OutputPath64
+        dotnet publish ./AmazTool/AmazTool.csproj -c Release -r win-x64 -p:SelfContained=true -p:EnableWindowsTargeting=true -p:PublishTrimmed=true -o $OutputPath64
   
     - name: Upload build artifacts
       uses: actions/upload-artifact@v7.0.0
       with:
         name: Stoun-windows
         path: |
-          ${{ github.workspace }}/v2rayN/Release/windows*
+          ${{ github.workspace }}/v2rayN/Release/windows-64
     
     # release zip archive
     - name: Package release zip archive
