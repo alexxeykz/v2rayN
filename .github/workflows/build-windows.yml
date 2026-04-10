@@ -49,11 +49,9 @@ jobs:
         Copy-Item "$env:TEMP\xray\xray.exe" "$env:OutputPath64\xray.exe"
         Write-Host "Downloaded xray-core $version"
 
-    - name: Install Inno Setup
-      run: choco install innosetup -y --no-progress
-
     - name: Build installer
       run: |
+        choco install innosetup -y --no-progress
         & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "${{ github.workspace }}\stoun_installer.iss"
 
     - name: Upload installer

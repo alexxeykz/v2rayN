@@ -10,6 +10,7 @@ SolidCompression=yes
 WizardStyle=modern
 SetupIconFile=v2rayN\v2rayN\Resources\Stoun.ico
 OutputDir=Output
+SourceDir=.
 UninstallDisplayIcon={app}\Stoun.exe
 PrivilegesRequired=admin
 ArchitecturesInstallIn64BitMode=x64compatible
@@ -22,7 +23,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "Создать ярлык на рабочем столе"; GroupDescription: "Дополнительно:"; Flags: unchecked
 
 [Files]
-Source: "Release\windows-64\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
+Source: "v2rayN\Release\windows-64\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
 
 [Icons]
 Name: "{group}\Stoun"; Filename: "{app}\Stoun.exe"
